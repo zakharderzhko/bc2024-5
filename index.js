@@ -63,3 +63,26 @@ app.delete('/notes/:noteName', (req, res) => {
     fs.unlinkSync(notePath);
     res.send('Note deleted');
 });
+
+app.get('/notes', (req, res) => {
+    const files = fs.readdirSync(options.cache);
+    const notes = files.map(fileName => {
+        const text = fs.readFileSync(path.join(options.cache, fileName), 'utf8');
+        return { name: fileName, text };
+    });
+
+    res.json(notes);
+});
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/write', (req, res) => {
+    const noteName = req.body.note_name;
+    const noteText = req.body.note;
+    if (notesDatabase.has(noteName)) {
+        return res.status(400).send('Note already exists');
+    }
+    notesDatabase.set(noteName, noteText);
+    res.status(201).send('Note created');
+});
