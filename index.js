@@ -2,7 +2,8 @@ const { Command } = require('commander');
 const program = new Command();
 const path = require('path');
 const fs = require('fs');
-const bodyParser = require('body-parser');
+const multer = require('multer');
+const upload = multer();
 
 program
   .option('-h, --host <type>', 'server host')
@@ -39,8 +40,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const server = http.createServer(app);
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
 server.listen(option.port, option.host, () => {
     console.log(`Server is running on http://${option.host}:${option.port}`);
@@ -92,7 +92,7 @@ app.get('/notes', (req, res) => {
     res.json(notes);
 });
 
-app.post('/write', (req, res) => {
+app.post('/write', upload.none(), (req, res) => {
     const noteName = req.body.note_name;
     const noteText = req.body.note;
     const notePath = path.join(option.cache, noteName);

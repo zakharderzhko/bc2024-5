@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "4d82b614-c87f-4421-aff7-edb625a928ff",
 		"name": "Testing Lab5",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "39399911"
 	},
 	"item": [
@@ -26,17 +26,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://localhost:3000/write",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"write"
-					]
-				}
+				"url": "http://localhost:3000/write"
 			},
 			"response": []
 		},
@@ -45,17 +35,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/notes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"notes"
-					]
-				}
+				"url": "http://localhost:3000/notes"
 			},
 			"response": []
 		},
@@ -65,8 +45,8 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
+					"mode": "formdata",
+					"formdata": [
 						{
 							"key": "note_name",
 							"value": "TestNote",
@@ -79,17 +59,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://localhost:3000/write",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"write"
-					]
-				}
+				"url": "http://localhost:3000/write"
 			},
 			"response": []
 		},
@@ -98,18 +68,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/notes/testNote",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"notes",
-						"testNote"
-					]
-				}
+				"url": "http://localhost:3000/notes/testNote"
 			},
 			"response": []
 		},
@@ -118,18 +77,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/notes/testNotee",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"notes",
-						"testNotee"
-					]
-				}
+				"url": "http://localhost:3000/notes/testNotee"
 			},
 			"response": []
 		},
@@ -147,18 +95,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:3000/notes/testNote",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"notes",
-						"testNote"
-					]
-				}
+				"url": "http://localhost:3000/notes/testNote"
 			},
 			"response": []
 		},
@@ -176,18 +113,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:3000/notes/testNotee",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"notes",
-						"testNotee"
-					]
-				}
+				"url": "http://localhost:3000/notes/testNotee"
 			},
 			"response": []
 		},
@@ -196,18 +122,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/notes/testNotee",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"notes",
-						"testNotee"
-					]
-				}
+				"url": "http://localhost:3000/notes/testNotee"
 			},
 			"response": []
 		},
@@ -216,18 +131,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/notes/testNote",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"notes",
-						"testNote"
-					]
-				}
+				"url": "http://localhost:3000/notes/testNote"
 			},
 			"response": []
 		}
